@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import MyRoute from "./1.4MyRoute";
+import './App.css'
+// import cartReducer from "./redux/reducer/cartReducer";
+// import { createStore } from "redux";
+// createStore is uded to provide information for compiler that our reducer is a store 
+import { Provider } from "react-redux";
+//provider is used to provide data from reducer to components
+import dataStore from "./store";
 
-function App() {
+const App=()=> {
+  // const reducerData =createStore (cartReducer)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Provider store={dataStore}>
+    <MyRoute/>
+    </Provider>
   );
 }
 
